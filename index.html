@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="./build/css/style.min.css">
+</head>
+<body>
+<div class="main">
+    <div class="head">
+        My Todo List
+    </div>
+    <div class="list_container">
+        <div class="list">
+            <div class="data_time">
+                <div class="date">
+                    <div class="day"></div>
+                    <div class="month_year">
+                        <div class="month"></div>
+                        <div class="year"></div>
+                    </div>
+                </div>
+                <div class="week"></div>
+            </div>
+            <form id="form" action="">
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
+            </form>
+            <img class="add_btn" src="./src/img/btn.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="popup">
+    <p class="title">New Todo</p>
+    <p class="text">Please write content of todo in input below!</p>
+    <form action="">
+        <input aria-label="" class="add_input" placeholder="Do something" type="text">
+    </form>
+    <div class="btn_container">
+        <button class="cancel">Cancel</button>
+        <button class="add">Add</button>
+    </div>
+
+</div>
+<script src="build/js/main.min.js"></script>
+</body>
+</html>
