@@ -1,6 +1,10 @@
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./src/scss/main.scss ***!
   \*********************************************************************************************************************************************************************/
+body {
+  margin: 0;
+}
+
 .head {
   background-color: #609FFF;
   text-align: left;
@@ -15,7 +19,8 @@
 }
 
 .list {
-  height: 700px;
+  position: relative;
+  height: 600px;
 }
 .list .data_time {
   display: flex;
@@ -51,68 +56,76 @@
 .list span.active {
   text-decoration: line-through;
 }
-.list label {
+.list .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Roboto Light", sans-serif;
   font-size: 16px;
-  margin-bottom: 35px;
+  padding: 15px 0;
 }
-.list #form {
-  margin-bottom: 100px;
+.list .list-item span {
+  font-size: 20px;
 }
-.list .add_btn {
-  float: right;
+.list .list-item:first-child {
+  padding-top: 0;
+}
+.list .list-item:last-child {
+  padding-bottom: 0;
+}
+.list .new_item {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
 }
 
-.popup {
+.add {
   display: none;
   padding: 20px 20px;
 }
-.popup .title {
+.add .title {
   font-family: "Roboto Light", sans-serif;
   font-size: 30px;
   color: #545454;
   margin: 0 0 20px 0;
 }
-.popup .text {
+.add .text {
   font-family: "Roboto Light", sans-serif;
   font-size: 16px;
   margin-bottom: 36px;
 }
-.popup .cancel {
+.add .cancel {
   border: none;
   background-color: transparent;
   color: #828282;
   font-family: "Roboto Light", sans-serif;
   font-size: 16px;
 }
-.popup .add {
+.add .modal_btn {
   border: none;
   background-color: transparent;
   color: #609FFF;
   font-family: "Roboto Light", sans-serif;
   font-size: 16px;
 }
-.popup .add_input {
+.add .add_input {
   width: 100%;
   height: 32px;
   margin-bottom: 33px;
   border: none;
   border-bottom: 1px solid #DEDEDE;
 }
-.popup .add_input::placeholder {
+.add .add_input::placeholder {
   font-family: "Roboto Light", sans-serif;
   font-size: 16px;
 }
-.popup .btn_container {
+.add .btn_container {
   float: right;
   display: flex;
   justify-content: space-between;
 }
 
-.popup.active {
+.add.active {
   display: block;
   width: 600px;
   height: 192px;
@@ -122,7 +135,7 @@
   left: 25%;
 }
 
-.popup.hide {
+.add.hide {
   display: none;
 }
 
@@ -132,6 +145,141 @@
 
 .main {
   background-color: transparent;
+}
+
+.rewrite {
+  width: 20px;
+  height: 20px;
+}
+
+.delete {
+  width: 20px;
+  height: 20px;
+}
+
+.edit {
+  display: none;
+  padding: 20px 20px;
+}
+.edit .title {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 30px;
+  color: #545454;
+  margin: 0 0 20px 0;
+}
+.edit .text {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 16px;
+  margin-bottom: 36px;
+}
+.edit .cancel_edit {
+  border: none;
+  background-color: transparent;
+  color: #828282;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 16px;
+}
+.edit .modal_btn {
+  border: none;
+  background-color: transparent;
+  color: #609FFF;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 16px;
+}
+.edit .edit_input {
+  width: 100%;
+  height: 32px;
+  margin-bottom: 33px;
+  border: none;
+  border-bottom: 1px solid #DEDEDE;
+}
+.edit .edit_input::placeholder {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 16px;
+}
+.edit .btn_container {
+  float: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit.active {
+  display: block;
+  width: 600px;
+  height: 192px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+}
+
+.edit.hide {
+  display: none;
+}
+
+.controls {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.controls > * {
+  padding: 10px;
+  font-size: 20px;
+}
+.controls .check {
+  width: 20px;
+  height: 20px;
+}
+
+.error {
+  display: none;
+}
+
+.error.active {
+  display: block;
+  position: absolute;
+  bottom: 43px;
+}
+
+.error_text {
+  position: relative;
+  margin: 0;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 16px;
+  color: red;
+}
+
+.edit_error {
+  display: none;
+}
+
+.edit_error.active {
+  display: block;
+  position: absolute;
+  bottom: 43px;
+}
+
+.delete_list {
+  transform: rotate(45deg);
+  position: absolute;
+  right: 95px;
+  bottom: 15px;
+}
+
+.list_wraper {
+  overflow-y: auto;
+  max-height: 350px;
+  padding-right: 10px;
+}
+.list_wraper::-webkit-scrollbar {
+  width: 4px;
+  background: none;
+}
+.list_wraper::-webkit-scrollbar-thumb {
+  width: 4px;
+  background-color: #333;
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=style.min.css.map*/

@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .head {
   background-color: #609FFF;
   text-align: left;
@@ -13,7 +17,8 @@
 
 .list {
   //border: 1px dashed;
-  height: 700px;
+  position: relative;
+  height: 600px;
 
   .data_time {
     display: flex;
@@ -58,26 +63,36 @@
     text-decoration: line-through;
   }
 
-  label {
+  .list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: "Roboto Light", sans-serif;
     font-size: 16px;
 
-    margin-bottom: 35px;
+    padding: 15px 0;
+
+    span {
+      font-size: 20px;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
-  #form {
-    margin-bottom: 100px;
-  }
-
-  .add_btn {
-    float: right;
+  .new_item {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
   }
 }
 
-.popup {
+.add {
   display: none;
   padding: 20px 20px;
 
@@ -103,7 +118,7 @@
      font-size: 16px;
    }
 
-  .add {
+  .modal_btn {
     border: none;
     background-color: transparent;
     color: #609FFF;
@@ -132,7 +147,7 @@
   }
 }
 
-.popup.active {
+.add.active {
   display: block;
   width: 600px;
   height: 192px;
@@ -142,17 +157,162 @@
   left: 25%;
 }
 
-.popup.hide {
+.add.hide {
   display: none;
 }
 
 .main.active {
-  background: rgba(130, 130, 130, 0.3);;
+  background: rgba(130, 130, 130, 0.3);
 }
 
 .main {
   background-color: transparent;
 }
 
+.rewrite {
+  width: 20px;
+  height: 20px;
+}
 
+.delete {
+  width: 20px;
+  height: 20px;
+}
 
+.edit {
+  display: none;
+  padding: 20px 20px;
+
+  .title {
+    font-family: "Roboto Light", sans-serif;
+    font-size: 30px;
+    color: #545454;
+    margin: 0 0 20px 0;
+  }
+
+  .text {
+    font-family: "Roboto Light", sans-serif;
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
+  .cancel_edit {
+    border: none;
+    background-color: transparent;
+    color: #828282;
+
+    font-family: "Roboto Light", sans-serif;
+    font-size: 16px;
+  }
+
+  .modal_btn {
+    border: none;
+    background-color: transparent;
+    color: #609FFF;
+
+    font-family: "Roboto Light", sans-serif;
+    font-size: 16px;
+  }
+
+  .edit_input {
+    width: 100%;
+    height: 32px;
+    margin-bottom: 33px;
+    border: none;
+    border-bottom: 1px solid #DEDEDE;
+
+    &::placeholder {
+      font-family: "Roboto Light", sans-serif;
+      font-size: 16px;
+    }
+  }
+
+  .btn_container {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.edit.active {
+  display: block;
+  width: 600px;
+  height: 192px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+}
+
+.edit.hide {
+  display: none;
+}
+
+.controls {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.error {
+  display: none;
+}
+
+.error.active {
+  display: block;
+  position: absolute;
+  bottom: 43px;
+}
+
+.error_text {
+  position: relative;
+  margin: 0;
+  font-family: "Roboto Light",sans-serif;
+  font-size: 16px;
+  color: red;
+}
+
+.edit_error {
+  display: none;
+}
+
+.edit_error.active {
+  display: block;
+  position: absolute;
+  bottom: 43px;
+}
+
+.delete_list {
+  transform: rotate(45deg);
+  position: absolute;
+  right: 95px;
+  bottom: 15px;
+}
+
+.list_wraper {
+  overflow-y: auto;
+  max-height: 350px;
+  padding-right: 10px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: #333;
+    border-radius: 4px;
+  }
+}

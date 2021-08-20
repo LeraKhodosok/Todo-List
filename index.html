@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./build/css/style.min.css">
 </head>
 <body>
 <div class="main">
     <div class="head">
+        <i class="fa fa-home"></i>
         My Todo List
     </div>
     <div class="list_container">
@@ -23,32 +25,42 @@
                 </div>
                 <div class="week"></div>
             </div>
-            <form id="form" action="">
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-                <label><span>Todo Title</span><input class="check" type="checkbox"></label>
-            </form>
-            <img class="add_btn" src="./src/img/btn.png" alt="">
+            <div class="list_wraper"></div>
+            <img class="delete_list" src="./src/img/delete.svg" alt="">
+            <img class="new_item" src="./src/img/btn.png" alt="">
         </div>
     </div>
 </div>
-<div class="popup">
+<div class="add modal">
     <p class="title">New Todo</p>
     <p class="text">Please write content of todo in input below!</p>
     <form action="">
         <input aria-label="" class="add_input" placeholder="Do something" type="text">
     </form>
+    <div class="error">
+        <p class="error_text">Please fill in the field</p>
+    </div>
     <div class="btn_container">
         <button class="cancel">Cancel</button>
-        <button class="add">Add</button>
+        <button class="modal_btn add_btn">Add</button>
     </div>
-
 </div>
+
+<div class="edit modal">
+    <p class="title">New Todo</p>
+    <p class="text">Please rewrite content of todo in input below <i class="fa fa-heart"></i></p>
+    <form action="">
+        <input aria-label="" class="edit_input" placeholder="Do something" type="text">
+    </form>
+    <div class="edit_error">
+        <p class="error_text">Please fill in the field</p>
+    </div>
+    <div class="btn_container">
+        <button class="cancel_edit">Cancel</button>
+        <button class="modal_btn edit_btn">Edit</button>
+    </div>
+</div>
+
 <script src="build/js/main.min.js"></script>
 </body>
 </html>
